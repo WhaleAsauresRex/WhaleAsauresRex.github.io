@@ -121,6 +121,10 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
+    setTimeOut(respawn, 3000);
+}
+    function respawn(){
+      player = game.add.sprite(32, game.world.height - 150, 'dude');
 }
 </script>
 
