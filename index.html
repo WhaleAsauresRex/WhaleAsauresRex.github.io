@@ -26,11 +26,10 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
-function create() {
-respawn();
 function respawn() {
     player = game.add.sprite(32, game.world.height - 150, 'dude');
 }
+function create() {
     game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
 	
     game.input.onDown.add(gofull, this);
@@ -136,7 +135,7 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
-    setTimeout(create, 3000);
+    setTimeout(respawn, 3000);
 }
 </script>
 
