@@ -27,6 +27,18 @@ var stars;
 var score = 0;
 var scoreText;
 function create() {
+    game.scale.fullscreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+	
+    game.input.onDown.add(gofull, this);
+    function gofull() {
+	if (game.scale.isFullScreen) {
+	game.scale.stopFullScreen();    
+	}
+	else {
+	game.scale.startFullScreen(false);
+	}
+    }
+
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //  A simple background for our game
@@ -122,6 +134,7 @@ function collectStar (player, star) {
     score += 10;
     scoreText.text = 'Score: ' + score;
 }
+	
 </script>
 
 </body>
