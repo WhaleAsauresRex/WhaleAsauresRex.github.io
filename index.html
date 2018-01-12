@@ -27,6 +27,7 @@ var stars;
 var score = 0;
 var scoreText;
 function create() {
+respawn();
 function respawn() {
     player = game.add.sprite(32, game.world.height - 150, 'dude');
 }
@@ -135,7 +136,7 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
-    setTimeout(create(respawn()), 3000);
+    setTimeout(create, 3000);
 }
 </script>
 
