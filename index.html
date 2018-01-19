@@ -123,13 +123,7 @@ function update() {
         //  Move to the right
         player.body.velocity.x = 150;
         player.animations.play('right');
-    }
-    else if (cursors.up.isDown&&Jumping < 2)
-    {
-	Jumping +=1;
-        player.body.velocity.y = -200;
-	
-    }    
+    } 
     else
     {
         //  Stand still
