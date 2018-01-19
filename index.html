@@ -124,6 +124,12 @@ function update() {
         player.body.velocity.x = 150;
         player.animations.play('right');
     }
+    else if (cursors.up.isDown&&Jumping < 2)
+    {
+	Jumping += 1;
+        player.body.velocity.y = -350;
+	
+    }    
     else
     {
         //  Stand still
@@ -133,12 +139,6 @@ function update() {
     }
     
     //  Allow the player to jump if they are touching the ground.
-    if ((cursors.up.isDown&&Jumping < 2))
-    {
-	Jumping += 1;
-        player.body.velocity.y = -350;
-	
-    }    
 }
 function collectStar (player, star) {
     
