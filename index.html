@@ -20,6 +20,7 @@ function preload() {
     game.load.image('star', 'soda.png');
     game.load.spritesheet('dude', 'Base.png', 32, 48);
 }
+var Jumping = 0;
 var player;
 var platforms;
 var cursors;
@@ -131,10 +132,15 @@ function update() {
     }
     
     //  Allow the player to jump if they are touching the ground.
-    if (player.body.touching.down)
+    if (cursors.up.isDown)
     {
+	Jumping += 1;
         player.body.velocity.y = -350;
     }
+    else if (Jumping == 2){
+	Jumping -= 1;    
+    }
+	    
 }
 function collectStar (player, star) {
     
