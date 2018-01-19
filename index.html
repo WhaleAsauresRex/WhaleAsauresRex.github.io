@@ -136,15 +136,14 @@ function update() {
         player.animations.stop();
         player.frame = 0;
     }
-    if (cursors.up.isDown&&Jumping < 2)
+    if (cursors.up.isDown&&Jumping <= 2)
     {
 	Jumping +=1;
         player.body.velocity.y = -200;
 	
     }    
-    else if (cursors.up.isDown&&Jumping > 2)
+    else if (cursors.up.isDown&&Jumping > 3)
     {
-        window.alert("stop!");
 	Jumping -= 2;    
 }
 }
