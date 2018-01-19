@@ -136,9 +136,10 @@ function update() {
         player.body.velocity.y = -200;
 	
     }    
-    else if ((cursors.up.isDown)&&(Jumping > 3))
+    else if (Jumping > 3)
     {
-	Jumping -= 2;    
+	window.alert('hey it worked');
+	Jumping -= 3;    
 }
 }
 function collectStar (player, star) {
