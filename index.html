@@ -27,6 +27,17 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
+    if ((cursors.up.isDown)&&(Jumping <= 2))
+    {
+	Jumping +=1;
+        player.body.velocity.y = -200;
+	
+    }    
+    else if (Jumping > 3)
+    {
+	window.alert('hey it worked');
+	Jumping -= 3;    
+}
 function respawn() {
     player = game.add.sprite(32, game.world.height - 150, 'dude');
     game.physics.arcade.enable(player);
@@ -130,17 +141,6 @@ function update() {
         player.animations.stop();
         player.frame = 2;
     }
-    if ((cursors.up.isDown)&&(Jumping <= 2))
-    {
-	Jumping +=1;
-        player.body.velocity.y = -200;
-	
-    }    
-    else if (Jumping > 3)
-    {
-	window.alert('hey it worked');
-	Jumping -= 3;    
-}
 }
 function collectStar (player, star) {
     
