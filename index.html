@@ -116,13 +116,11 @@ function update() {
     {
 	Jumping +=1;
         player.body.velocity.y = -300;
-	window.alert(Jumping);
 	
     }    
     else if ((player.body.touching.down)&&(Jumping >=2))
     {	
 	Jumping -= 2;
-	window.alert("it worked?");
     }
     if (cursors.left.isDown)
     {
