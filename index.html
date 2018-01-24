@@ -119,9 +119,9 @@ function update() {
 	
     }    
     else if (Jumping > 2)
-    {
-	window.alert('hey it worked');
-	Jumping -= 2;    
+    {	
+	Jumping -= 2;
+        player.body.velocity.y = 0;
     }
     if (cursors.left.isDown)
     {
