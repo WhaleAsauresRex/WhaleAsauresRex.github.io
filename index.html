@@ -112,14 +112,14 @@ function update() {
     game.physics.arcade.overlap(player, stars, collectStar, null, this);
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
-    if ((cursors.up.isDown)&&(Jumping < 4))
+    if ((cursors.up.isDown)&&(Jumping < 2))
     {
 	Jumping +=1;
         player.body.velocity.y = -300;
 	window.alert(Jumping);
 	
     }    
-    else if ((player.body.touching.down)&&(Jumping >=4))
+    else if ((player.body.touching.down)&&(Jumping >=2))
     {	
 	Jumping -= 2;
 	window.alert("it worked?");
