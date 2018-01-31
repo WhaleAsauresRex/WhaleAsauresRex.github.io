@@ -38,6 +38,9 @@ function respawn() {
     player.animations.add('left', [9, 10, 11], 10, true);
     player.animations.add('right', [6, 7, 8], 10, true);
 }
+function newLocation() {
+    location.href = "newWorld.html";	
+}
 function create() {
     game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
 	
@@ -149,7 +152,7 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
-    setTimeout(respawn, 3000);
+    setTimeout(newLocation, 3000);
 }
 </script>
 
