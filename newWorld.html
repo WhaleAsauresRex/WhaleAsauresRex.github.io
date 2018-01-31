@@ -77,6 +77,9 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
 }
+function newLocation() {
+    location.href = "index.html";	
+}
 function update() {
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
@@ -113,10 +116,11 @@ function update() {
 function collectStar (player, star) {
     
     // Removes the star from the screen
-    star.kill();
+    player.kill();
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
+    setTimeout(newLocation, 3000);
 }
 </script>
 
