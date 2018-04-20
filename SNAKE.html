@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <script src="p5.js"></script>
+    <script src="snake.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <style>
+      #button {
+        float:left;
+      }
+    </style>
+  </head>
+
+<body>
+  <h1 id = "score">h</h1>
+  <button onClick = "REload()" id = "button"> reload </button>
+  <script>
+    var s;
+    var scl = 20;
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+    var food;
+    var eat;
+    
+    function preload() {
+      soundFormats('mp3', 'ogg');
+      eat = loadSound('but.mp3');
+    }
+    
+    function setup() {
+    createCanvas(500, 500);
+    s = new Snake();
+    foodLocation();
+    }
+
+    function draw() {
+    background(85,3,47);
+    frameRate(10);
+    s.show();
+    s.update();
+    s.death();
+    fill(255,0,0);// this is the apple
+    rect(food.x, food.y, scl, scl); // shape of the apple
+    if (s.eat(food)) {
+      foodLocation();
+    }
+    
+}
+
+    function keyPressed() {
+      if(keyCode===UP_ARROW) {
+        s.dir(0,-1);
+        }
+      else if(keyCode===DOWN_ARROW) {
+        s.dir(0, 1);
+      }
+      else if(keyCode===LEFT_ARROW) {
+        s.dir(-1, 0);
+      }
+      else if(keyCode===RIGHT_ARROW) {
+        s.dir(1,0);
+      }
+    }
+    
+    function foodLocation() {
+     var cols = floor(width / scl); //make cols 20 pixels wide
+     var rows = floor(height / scl); //make rows 20 pixels wide
+     food = createVector(floor(random(cols)), floor(random(rows))); //generates random position for the food
+     food.mult(scl);
+}
+  </script>
+  
+</body>
+</html>
